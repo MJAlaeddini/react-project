@@ -17,6 +17,7 @@ import GetAppTwoToneIcon from '@mui/icons-material/GetAppOutlined';
 import FileCopyTwoToneIcon from '@mui/icons-material/FileCopyOutlined';
 import PictureAsPdfTwoToneIcon from '@mui/icons-material/PictureAsPdfOutlined';
 import ArchiveTwoToneIcon from '@mui/icons-material/ArchiveOutlined';
+import DeleteIcon from '@mui/icons-material/DeleteSweep';
 
 const CardWrapper = styled(MainCard)(({ theme }) => ({
   backgroundColor: theme.palette.secondary.dark,
@@ -125,13 +126,13 @@ const EarningCard = ({ isLoading }) => {
                       }}
                     >
                       <MenuItem onClick={handleClose}>
-                        <GetAppTwoToneIcon sx={{ mr: 1.75 }} /> Import Card
+                        <GetAppTwoToneIcon sx={{ mr: 1.75 }} /> افزودن کارت
                       </MenuItem>
                       <MenuItem onClick={handleClose}>
-                        <FileCopyTwoToneIcon sx={{ mr: 1.75 }} /> Copy Data
+                        <FileCopyTwoToneIcon sx={{ mr: 1.75 }} /> کپی دیتا
                       </MenuItem>
                       <MenuItem onClick={handleClose}>
-                        <PictureAsPdfTwoToneIcon sx={{ mr: 1.75 }} /> Export
+                        <PictureAsPdfTwoToneIcon sx={{ mr: 1.75 }} /> خروجی با
                       </MenuItem>
                       <MenuItem onClick={handleClose}>
                         <ArchiveTwoToneIcon sx={{ mr: 1.75 }} /> Archive File
@@ -141,9 +142,9 @@ const EarningCard = ({ isLoading }) => {
                 </Grid>
               </Grid>
               <Grid item>
-                <Grid container alignItems="center">
+                <Grid container alignItems="center" dir="rtl">
                   <Grid item>
-                    <Typography sx={{ fontSize: '2.125rem', fontWeight: 500, mr: 1, mt: 1.75, mb: 0.75 }}>$500.00</Typography>
+                    <Typography sx={{ fontSize: '2.125rem', fontWeight: 500, mr: 11, mt: 0.6, mb: 0.75 }}>اردوی راهی برای چاره دیگر</Typography>
                   </Grid>
                   <Grid item>
                     <Avatar
@@ -159,6 +160,30 @@ const EarningCard = ({ isLoading }) => {
                   </Grid>
                 </Grid>
               </Grid>
+
+              <Grid item>
+                <Grid container justifyContent="start" spacing={2}>
+
+                  <Grid item dir="ltr"> 
+                
+                    <DeleteIcon></DeleteIcon>
+                  </Grid>
+                  <Grid item dir="ltr"> 
+                    <p>sdvdssddsvdvdsvsd</p> 
+                  
+                  </Grid>
+                  <Grid item dir="ltr"> 
+                    <p>sdvdssddsvdvdsvsd</p> 
+                  
+                  </Grid>
+                  <Grid item dir="ltr"> 
+                    <p>sdvdssddsvdvdsvsd</p> 
+                  
+                  </Grid>
+                </Grid>
+
+              </Grid>
+
               <Grid item sx={{ mb: 1.25 }}>
                 <Typography
                   sx={{
@@ -167,7 +192,7 @@ const EarningCard = ({ isLoading }) => {
                     color: theme.palette.secondary[200]
                   }}
                 >
-                  Total Earning
+                  وضعیت اردو:
                 </Typography>
               </Grid>
             </Grid>
