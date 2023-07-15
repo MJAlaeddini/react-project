@@ -75,14 +75,14 @@ const Customization = () => {
     let newFont;
     switch (fontFamily) {
       case 'Inter':
-        newFont = `'Inter', sans-serif`;
+        newFont = `vazir`;
         break;
       case 'Poppins':
-        newFont = `'Poppins', sans-serif`;
+        newFont = `vazir`;
         break;
       case 'Roboto':
       default:
-        newFont = `'Roboto', sans-serif`;
+        newFont = `vazir`;
         break;
     }
     dispatch({ type: SET_FONT_FAMILY, fontFamily: newFont });

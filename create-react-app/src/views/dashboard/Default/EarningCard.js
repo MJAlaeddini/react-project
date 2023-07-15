@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 // material-ui
 import { styled, useTheme } from '@mui/material/styles';
-import { Avatar, Box, Grid, Menu, MenuItem, Typography } from '@mui/material';
+import { Avatar, Box, Button, Grid, Menu, MenuItem, Typography } from '@mui/material';
 
 // project imports
 import MainCard from 'ui-component/cards/MainCard';
@@ -12,12 +12,15 @@ import SkeletonEarningCard from 'ui-component/cards/Skeleton/EarningCard';
 // assets
 import EarningIcon from 'assets/images/icons/earning.svg';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import GetAppTwoToneIcon from '@mui/icons-material/GetAppOutlined';
 import FileCopyTwoToneIcon from '@mui/icons-material/FileCopyOutlined';
 import PictureAsPdfTwoToneIcon from '@mui/icons-material/PictureAsPdfOutlined';
 import ArchiveTwoToneIcon from '@mui/icons-material/ArchiveOutlined';
-import DeleteIcon from '@mui/icons-material/DeleteSweep';
+import DeleteIcon from '@mui/icons-material/DeleteOutlined';
+import EyeIcon from '@mui/icons-material/RemoveRedEyeTwoTone';
+
+
+
 
 const CardWrapper = styled(MainCard)(({ theme }) => ({
   backgroundColor: theme.palette.secondary.dark,
@@ -70,6 +73,13 @@ const EarningCard = ({ isLoading }) => {
     setAnchorEl(null);
   };
 
+  const handleDelClick = () => {
+    gOther = document.querySelectorAll(".grid:not(#g1)");
+
+    for (g of gOther) {
+    g.style.display = "none";
+    }
+  }
   return (
     <>
       {isLoading ? (
@@ -77,7 +87,9 @@ const EarningCard = ({ isLoading }) => {
       ) : (
         <CardWrapper border={false} content={false}>
           <Box sx={{ p: 2.25 }}>
+
             <Grid container direction="column">
+
               <Grid item>
                 <Grid container justifyContent="space-between">
                   <Grid item>
@@ -141,59 +153,31 @@ const EarningCard = ({ isLoading }) => {
                   </Grid>
                 </Grid>
               </Grid>
+              
               <Grid item>
-                <Grid container alignItems="center" dir="rtl">
+                <Grid container alignItems="top" dir="rtl">
                   <Grid item>
                     <Typography sx={{ fontSize: '2.125rem', fontWeight: 500, mr: 11, mt: 0.6, mb: 0.75 }}>اردوی راهی برای چاره دیگر</Typography>
+                    <Typography sx={{ color:'#99D9EA' ,fontSize: '0.9rem', fontWeight: 300, mr: 11, mt: 0.9, mb: 0.75 }}>این اردو، یک اردوی فرهنگی تفریحی برای برگزاری است و اکنون در وضعیت خوبی به سر می برد</Typography>
                   </Grid>
-                  <Grid item>
-                    <Avatar
-                      sx={{
-                        cursor: 'pointer',
-                        ...theme.typography.smallAvatar,
-                        backgroundColor: theme.palette.secondary[200],
-                        color: theme.palette.secondary.dark
-                      }}
-                    >
-                      <ArrowUpwardIcon fontSize="inherit" sx={{ transform: 'rotate3d(1, 1, 1, 45deg)' }} />
-                    </Avatar>
-                  </Grid>
+                  
                 </Grid>
               </Grid>
 
               <Grid item>
                 <Grid container justifyContent="start" spacing={2}>
 
-                  <Grid item dir="ltr"> 
-                
-                    <DeleteIcon></DeleteIcon>
+                  <Grid id= "sss" item dir="ltr"> 
+                    <Button onClick={handleDelClick} color="error" variant="contained" startIcon={<DeleteIcon />}>حذف</Button> 
                   </Grid>
-                  <Grid item dir="ltr"> 
-                    <p>sdvdssddsvdvdsvsd</p> 
                   
-                  </Grid>
+
                   <Grid item dir="ltr"> 
-                    <p>sdvdssddsvdvdsvsd</p> 
-                  
+                    <Button color="inherit" variant="outlined" startIcon={<EyeIcon />}>مشاهده</Button> 
                   </Grid>
-                  <Grid item dir="ltr"> 
-                    <p>sdvdssddsvdvdsvsd</p> 
-                  
-                  </Grid>
+
                 </Grid>
 
-              </Grid>
-
-              <Grid item sx={{ mb: 1.25 }}>
-                <Typography
-                  sx={{
-                    fontSize: '1rem',
-                    fontWeight: 500,
-                    color: theme.palette.secondary[200]
-                  }}
-                >
-                  وضعیت اردو:
-                </Typography>
               </Grid>
             </Grid>
           </Box>
@@ -202,6 +186,7 @@ const EarningCard = ({ isLoading }) => {
     </>
   );
 };
+
 
 EarningCard.propTypes = {
   isLoading: PropTypes.bool
