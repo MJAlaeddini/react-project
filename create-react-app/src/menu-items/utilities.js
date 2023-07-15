@@ -26,7 +26,7 @@ const utilities = {
     },
     {
       id: 'util-color',
-      title: 'Color',
+      title: 'رنگ',
       type: 'item',
       url: '/utils/util-color',
       icon: icons.IconPalette,

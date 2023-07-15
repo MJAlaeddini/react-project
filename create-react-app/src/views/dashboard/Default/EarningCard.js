@@ -73,6 +73,10 @@ const EarningCard = ({ isLoading }) => {
     setAnchorEl(null);
   };
 
+  const hadel = () => {
+      location.href = "http://localhost:3000/free/utils/util-typography"
+  };
+
   const handleDelClick = () => {
     gOther = document.querySelectorAll(".grid:not(#g1)");
 
@@ -173,7 +177,7 @@ const EarningCard = ({ isLoading }) => {
                   
 
                   <Grid item dir="ltr"> 
-                    <Button color="inherit" variant="outlined" startIcon={<EyeIcon />}>مشاهده</Button> 
+                    <Button onClick={hadel} color="inherit" variant="outlined" startIcon={<EyeIcon />}>مشاهده</Button> 
                   </Grid>
 
                 </Grid>
