@@ -37,10 +37,10 @@ const Register = () => {
                       <Grid item>
                         <Stack alignItems="center" justifyContent="center" spacing={1}>
                           <Typography color={theme.palette.secondary.main} gutterBottom variant={matchDownSM ? 'h3' : 'h2'}>
-                            Sign up
+                            ثبت نام
                           </Typography>
                           <Typography variant="caption" fontSize="16px" textAlign={matchDownSM ? 'center' : 'inherit'}>
-                            Enter your credentials to continue
+                            میتونی با اکانت گوگلت ثبت نام کنی
                           </Typography>
                         </Stack>
                       </Grid>
@@ -55,7 +55,7 @@ const Register = () => {
                   <Grid item xs={12}>
                     <Grid item container direction="column" alignItems="center" xs={12}>
                       <Typography component={Link} to="/pages/login/login3" variant="subtitle1" sx={{ textDecoration: 'none' }}>
-                        Already have an account?
+                        قبلا اکانت ساختی؟
                       </Typography>
                     </Grid>
                   </Grid>
